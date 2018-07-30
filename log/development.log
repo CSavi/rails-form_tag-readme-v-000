@@ -328,3 +328,33 @@ ActionController::InvalidAuthenticityToken (ActionController::InvalidAuthenticit
   Rendered /usr/local/rvm/gems/ruby-2.3.1/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.8ms)
   Rendered /usr/local/rvm/gems/ruby-2.3.1/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
   Rendered /usr/local/rvm/gems/ruby-2.3.1/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (38.4ms)
+
+
+Started GET "/" for 173.73.212.190 at 2018-07-30 18:19:19 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendered /usr/local/rvm/gems/ruby-2.3.1/gems/railties-4.2.10/lib/rails/templates/rails/welcome/index.html.erb (2.9ms)
+Completed 200 OK in 27ms (Views: 15.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/posts/new" for 173.73.212.190 at 2018-07-30 18:19:24 +0000
+Processing by PostsController#new as HTML
+  Rendered posts/new.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 309ms (Views: 308.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/posts" for 173.73.212.190 at 2018-07-30 18:19:36 +0000
+Processing by PostsController#create as HTML
+  Parameters: {"post"=>{"title"=>"smile", "description"=>"rainbows make us smile"}, "authenticity_token"=>"rlC6+vGy3+oxajjNGdf77mMRQlavUCN128utABK/ZBO2SCdi+j3CZtH6UNuiF4HfZHxlCEqPAZ5b5lzB5gNweg=="}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "posts" ("title", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "smile"], ["description", "rainbows make us smile"], ["created_at", "2018-07-30 18:19:36.359193"], ["updated_at", "2018-07-30 18:19:36.359193"]]
+  [1m[35m (22.5ms)[0m  commit transaction
+Redirected to http://67.205.182.198:39256/posts
+Completed 302 Found in 38ms (ActiveRecord: 23.7ms)
+
+
+Started GET "/posts" for 173.73.212.190 at 2018-07-30 18:19:36 +0000
+Processing by PostsController#index as HTML
+  [1m[36mPost Load (0.4ms)[0m  [1mSELECT "posts".* FROM "posts"[0m
+  Rendered posts/index.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 16ms (Views: 15.3ms | ActiveRecord: 0.4ms)
